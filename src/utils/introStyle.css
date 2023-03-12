@@ -1,0 +1,64 @@
+@import url('colorDef.css');
+
+.intro-container{
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 25px;
+    background: var(--container-color);
+}
+.intro-intro{
+    text-align: center;
+}
+.intro-logo-img{
+    display: inline-block;
+    content: var(--logo-src);
+    width: var(--logo-width-intro);
+    height: var(--logo-height-intro);
+}
+
+.intro-heading{
+    font-weight: 1000;
+    font-size: 30px;
+    padding: 20px;
+}
+.intro-heading::after{
+    content: var(--intro-heading-val);
+}
+
+.intro-intro{
+    padding: 10px;
+}
+.intro-intro::after{
+    content: var(--intro);
+}
+
+.intro-button{
+    padding: 5px 0;
+    margin-top: 10px;
+    height: 100%;
+    width: 50%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #05073a, #dc0606ca);
+    /* background: var(--button_color); */
+    cursor: pointer;
+}
+
+.intro-button:active {
+    box-shadow: 0 5px #dc0606ca;
+    transform: translateY(4px);
+}
+
+@media (max-width:584px){
+    .intro-logo-img{
+        width: 200px;
+        height: 150px;
+    }
+}

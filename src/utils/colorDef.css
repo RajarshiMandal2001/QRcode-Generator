@@ -1,0 +1,18 @@
+:root {
+    --body-color: linear-gradient(135deg, #05073a, #dc0606ca);
+    --button-color: linear-gradient(135deg, #05073a, #dc0606ca);
+    --container-color: linear-gradient(135deg, #dc0606ca, #05073a);
+    --box-shadow-color: 0 5px #dc0606ca;
+    --logo-width-qr: 250px;
+    --logo-height-qr: 180px;
+    --logo-width-intro: 400px;
+    --logo-height-intro: 300px;
+
+    --logo-src: url("E:/my_react projects/qr-code-generator/src/assets/logo2.png");
+
+    --intro: "We are excited to offer you a quick and easy way to create and download custom QR code for your business card";
+    --intro-heading-val: "Welcome to QR code Generator";
+    --label-in-qr: "Your Own QR code";
+
+    --best-wishes: "Best Wishes from ABC-softwares";
+}

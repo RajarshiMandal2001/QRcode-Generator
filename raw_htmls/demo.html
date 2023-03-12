@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QR Code Generator</title>
+    <!-- <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script> -->
+</head>
+
+<body>
+    <form id="contact-form" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone" pattern='^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$' required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+
+        <label for="designation">Designation:</label>
+        <input type="text" name="designation" id="designation" pattern="[a-zA-Z]*" required>
+
+        <label for="company">Company:</label>
+        <input type="text" name="company" id="company" required>
+
+        <button type="submit">Submit</button>
+        <button onclick="downloadQR()">Download as PNG</button>
+    </form>
+
+    <div id="qrcode">
+        QR Code will be generated here
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+
+        var isQRgenerated = 0;
+        var form = document.getElementById("contact-form");
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 200,
+            height: 200
+        });
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var designation = document.getElementById("designation").value;
+            var company = document.getElementById("company").value;
+
+            var contact = "BEGIN:VCARD\n" +
+                "VERSION:3.0\n" +
+                "FN:" + name + "\n" +
+                "TEL:" + phone + "\n" +
+                "EMAIL:" + email + "\n" +
+                "ORG:" + company + "\n" +
+                "TITLE:" + designation + "\n" +
+                "END:VCARD";
+
+            qrcode.makeCode(contact);
+            isQRgenerated = 1;
+        });
+        function downloadQR(){
+            if(isQRgenerated){
+                const qrCodeDataURL = document.querySelector('canvas').toDataURL();
+                console.log("link:",qrCodeDataURL);
+                const link = document.createElement('a');
+                link.download = 'qrcode.png';
+                link.href = qrCodeDataURL;
+                console.log("link:",qrCodeDataURL);
+                link.click();
+            }
+            else{
+                alert("QR not generated!!");
+            } 
+        }
+
+    </script>
+
+</body>
+
+</html>

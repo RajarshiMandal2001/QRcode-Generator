@@ -1,0 +1,109 @@
+@import url('colorDef.css');
+
+
+.screenshot-container{
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 25px;
+    background: var(--container-color);;
+}
+
+.label{
+    padding: 5px;
+    font-size: 35px;
+}
+.label:after{
+    content: var(--label-in-qr);
+}
+/* .qr-container{
+    border-radius: 25px;
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 10px 5px 5px #808081;
+}
+.qrimg{
+    justify-content: center;
+    align-items: center;
+} */
+.qr-container{
+    display: flex;
+    padding: 25px;
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px #808081;
+    border-radius: 25px;
+  }
+  .qrimg, .logoimg {
+    /* display: block; */
+    float: none;
+    /* width: 50%; */
+  }
+  .logoimg {
+    clear: both;
+    /* 220,170 */
+  }
+  .logo{
+    content: var(--logo-src);
+    width: var(--logo-width-qr);
+    height: var(--logo-height-qr);
+  }
+.best-wishes{
+    padding: 15px;
+}
+.best-wishes::after{
+    content: var(--best-wishes);
+    padding: 15px;
+}
+.download-button{
+    padding: 10px 0;
+    margin-top: 10px;
+    height: 100%;
+    width: 50%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: var(--button-color);
+    cursor: pointer;
+    border: 2px solid #A45A52;
+    box-shadow: 5px 5px 5px #A45A52;
+}
+.download-button:active{
+    transform: translateY(4px);
+}
+
+@media (max-width:584px){
+    .label{
+        font-size: 20px;
+    }
+    .qr-container{
+        display: flex;
+        padding: 5px;
+        width: 100%;
+        height: 250px;
+        background-color: #fff;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        box-shadow: 10px 5px 5px #808081;
+        border-radius: 25px;
+      }
+
+    .logoimg{
+        display: none;
+    }
+}
